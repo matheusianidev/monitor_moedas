@@ -1,24 +1,26 @@
-# README
+# 📊 Monitoramento de Moedas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto em Ruby on Rails que permite visualizar a variação de moedas em tempo real por meio de gráficos interativos. Utiliza dados da API da [AwesomeAPI](https://docs.awesomeapi.com.br/api-de-moedas).
 
-Things you may want to cover:
+## 🔧 Tecnologias utilizadas
 
-* Ruby version
+- Ruby on Rails 7.1.5.1
+- Chartkick + Chart.js
+- HTML/CSS (puro)
+- API AwesomeAPI
+- Sprockets
 
-* System dependencies
+## ✨ Funcionalidades
 
-* Configuration
+- Visualização de gráfico para uma moeda específica (USD, EUR, BTC)
+- Comparação entre duas moedas com visualização gráfica
+- Filtro por período: 7, 15 ou 30 dias
 
-* Database creation
+## 📦 Instalação
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+git clone https://github.com/matheusianidev/monitoramento_moedas.git
+cd monitoramento_moedas
+bundle install
+bin/rails db:setup
+bin/dev
