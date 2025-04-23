@@ -1,0 +1,47 @@
+<h1>Gráfico de uma moeda</h1>
+
+<%= form_with url: root_path, method: :get, local: true do %>
+  <div>
+    <label>Moeda:</label>
+    <%= select_tag :currency, options_for_select(HomeController::CURRENCIES.map { |c| c[:code] }, params[:currency]) %>
+  </div>
+
+  <div>
+    <label>Período (dias):</label>
+    <%= select_tag :period, options_for_select([7, 15, 30], params[:period]) %>
+  </div>
+
+  <%= submit_tag "Filtrar moeda única" %>
+<% end %>
+
+<% if @chart_data.present? %>
+  <%= line_chart @chart_data, width: "800px", height: "400px" %>
+<% end %>
+
+<hr>
+
+<h2>Comparar duas moedas</h2>
+
+<%= form_with url: root_path, method: :get, local: true do %>
+  <div>
+    <label>Moeda 1:</label>
+    <%= select_tag :currency1, options_for_select(HomeController::CURRENCIES.map { |c| c[:code] }, params[:currency1]) %>
+  </div>
+
+  <div>
+    <label>Moeda 2:</label>
+    <%= select_tag :currency2, options_for_select(HomeController::CURRENCIES.map { |c| c[:code] }, params[:currency2]) %>
+  </div>
+
+  <div>
+    <label>Período (dias):</label>
+    <%= select_tag :compare_period, options_for_select([7, 15, 30], params[:compare_period]) %>
+  </div>
+
+  <%= submit_tag "Comparar moedas" %>
+<% end %>
+
+<% if @compare_data.present? %>
+  <h3>Comparativo: <%= params[:currency1] %> vs <%= params[:currency2] %></h3>
+  <%= line_chart @compare_data, width: "800px", height: "400px" %>
+<% end %>
