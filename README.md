@@ -12,7 +12,7 @@ Projeto em Ruby on Rails que permite visualizar a variação de moedas em tempo 
 
 ## ✨ Funcionalidades
 
-- Visualização de gráfico para uma moeda específica (USD, EUR, BTC)
+- Visualização de gráfico para uma moeda específica ( USD, EUR, BTC )
 - Comparação entre duas moedas com visualização gráfica
 - Filtro por período: 7, 15 ou 30 dias
 
